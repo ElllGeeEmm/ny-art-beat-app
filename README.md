@@ -8,6 +8,8 @@ The app is intended to view ongoing and upcoming events listed in the NY Art Bea
 ## Problems
 
 The Api delivers its data in an XML format. I have found a library which allows for the easy conversion of xml to javascript objects, however the data does seem to be rather clunky to use regardless. The biggest problems I forsee come from sorting this data, however much of that difficultly can be handled post mvp as the API has well defined endpoints for a variety of search methods.
+library:
+https://www.npmjs.com/package/xml-js
 
 ## MVP
 - search form can trigger a varitey of api end points to generate lists of events displayed in main by EventList
@@ -16,7 +18,7 @@ The Api delivers its data in an XML format. I have found a library which allows 
     * link to event detail
 - EventDetail displays the events detailed information
 - good style
-- clear layout
+- clear layout using react-flexbox-grid: http://roylee0704.github.io/react-flexbox-grid/
 
 ## post MVP
 - sort returned events
