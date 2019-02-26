@@ -37,9 +37,9 @@ class ListItem extends Component {
       <div className='event-container'>
         <div className='list-item-header'>
           <div className='icon-holder' onClick={this.handleClick}>
-            <img src={this.toggleIcon()} className='icon' />
+            <img src={this.toggleIcon()} className='icon' alt='icon'/>
           </div>
-          <h2>{event.Name._text}</h2>
+          <Link to={`eventDetail/${event._attributes.id}`}><h2>{event.Name._text}</h2></Link>
         </div>
         <div className='expand-container' style={styleObj}>
           <div>Showing until: {event.DateEnd._text}</div>

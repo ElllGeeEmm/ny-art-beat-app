@@ -2,7 +2,7 @@ import React from 'react'
 import EventList from './EventList'
 import EventDetail from './EventDetail'
 import Welcome from './Welcome'
-import { Link, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 export default (props) => {
   const { events } = props;
