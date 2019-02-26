@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import plusIcon from '../assets/plusIcon.png'
 import minusIcon from '../assets/minusIcon.png'
 
 class ListItem extends Component {
   constructor(props){
-    super(props)
+    super(props);
 
     this.handleClick = this.handleClick.bind(this);
 
@@ -16,22 +17,22 @@ class ListItem extends Component {
   handleClick(){
     this.setState(prevState =>({
       collapsed: !prevState.collapsed
-    }))
-  }
+    }));
+  };
 
   toggleHeight() {
     return this.state.collapsed ? 'none' : 'block';
-  }
+  };
 
   toggleIcon() {
     return this.state.collapsed ? plusIcon : minusIcon;
-  }
+  };
 
   render(){
     const { event } = this.props;
     const styleObj = {
       display: this.toggleHeight()
-    }
+    };
     return(
       <div className='event-container'>
         <div className='list-item-header'>
@@ -44,6 +45,7 @@ class ListItem extends Component {
           <div>Showing until: {event.DateEnd._text}</div>
           <div>Showing at: {event.Venue.Address._text}</div>
           <div>cost: {event.Price._text}</div>
+          <Link to={`eventDetail/${event._attributes.id}`}>Details</Link>
         </div>
       </div>
     );

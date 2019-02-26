@@ -10,7 +10,8 @@ class App extends Component {
     super();
 
     this.state = {
-      events: []
+      events: [],
+      event: null
     };
   };
 
@@ -20,10 +21,6 @@ class App extends Component {
     this.setState({
       events
     })
-  }
-
-  handleExpandClick(ev){
-
   }
 
   render() {

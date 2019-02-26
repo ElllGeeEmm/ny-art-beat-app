@@ -1,13 +1,12 @@
-import React from 'react'
-import ListItem from './ListItem'
+import React from 'react';
+import ListItem from './ListItem';
 
 export default (props) => {
-  console.log(props);
   const { events } = props;
   return(
     <div>
       {events && events.map(event => (
-        <ListItem key={event.Name._text} event={event} />
+        <ListItem key={event._attributes.id} event={event} />
       ))}
     </div>
   );
