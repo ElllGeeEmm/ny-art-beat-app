@@ -6,16 +6,33 @@
 
 /* ListItem component */
 
-.event-container{
+.event-container {
   max-width: 780px;
   margin: 10px auto;
 }
 
-.event-container > h2 {
+.list-item-header {
+  display: flex;
+  flex-direction: row;
+  background-color: darkgrey;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.icon-holder {
+  height: 40px;
+  width: 40px;
+}
+
+.icon {
+  height: 100%;
+  width: 100%;
+}
+
+.list-item-header > h2 {
   padding: 5px 20px 5px 0;
   text-align: right;
-  background-color: darkgrey;
-  border-radius: 5px;
+
 }
 
 .expand-container {

@@ -22,6 +22,10 @@ class App extends Component {
     })
   }
 
+  handleExpandClick(ev){
+    
+  }
+
   render() {
     const { events } = this.state;
     return (
