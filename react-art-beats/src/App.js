@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   handleExpandClick(ev){
-    
+
   }
 
   render() {
@@ -33,7 +33,6 @@ class App extends Component {
         <Header />
         <Main events={events}/>
         <Footer />
-
       </div>
     );
   }

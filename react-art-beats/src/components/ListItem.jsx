@@ -32,7 +32,6 @@ class ListItem extends Component {
     const styleObj = {
       display: this.toggleHeight()
     }
-    console.log(styleObj);
     return(
       <div className='event-container'>
         <div className='list-item-header'>

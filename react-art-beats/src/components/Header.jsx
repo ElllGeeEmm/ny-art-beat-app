@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link, Route } from 'react-router-dom'
 
 export default (props) => {
   return(
     <div>
-      <h2>Hi I'm a header</h2>
+      <Link to="/">Home</Link>
+      <Link to='/eventList'>Events</Link>
     </div>
   )
 }

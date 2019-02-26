@@ -2,6 +2,7 @@ import React from 'react'
 import ListItem from './ListItem'
 
 export default (props) => {
+  console.log(props);
   const { events } = props;
   return(
     <div>
