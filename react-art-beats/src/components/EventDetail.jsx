@@ -4,7 +4,7 @@ export default (props) => {
   const id = `${props.match.params.eventYear}/${props.match.params.eventId}`;
   const event = props.events.filter(event => event._attributes.id === id)[0];
   console.log(props.events);
-  console.log(event);
+  console.log(event.Description._cdata);
   return(
     <div>
       {event && (
@@ -21,7 +21,7 @@ export default (props) => {
             <div>opens: {event.Venue.OpeningHour._text}</div>
             <div>closes: {event.Venue.ClosingHour._text}</div>
           </div>
-          <div>{event.Description._cdata}</div>
+          <div dangerouslySetInnerHTML={{__html: event.Description._cdata}}></div>
         </div>
       )}
     </div>

@@ -9,14 +9,28 @@ class App extends Component {
   constructor(){
     super();
 
+    this.handleNavClick = this.handleNavClick.bind(this)
+
     this.state = {
       events: [],
-      event: null
+      event: null,
+      media: ''
     };
   };
 
+  async handleNavClick(e){
+    console.log(e.target);
+    const { value } = e.target;
+
+    const resp = await getEvents(value);
+    const events = resp.Events.Event;
+    this.setState({
+      events
+   })
+ }
+
   async componentDidMount(){
-    const resp = await getEvents();
+    const resp = await getEvents('print_painting');
     const events = resp.Events.Event;
     this.setState({
       events
@@ -25,9 +39,10 @@ class App extends Component {
 
   render() {
     const { events } = this.state;
+    console.log(events);
     return (
       <div className="App">
-        <Header />
+        <Header handleNavClick={this.handleNavClick} />
         <Main events={events}/>
         <Footer />
       </div>
