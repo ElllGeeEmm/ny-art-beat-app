@@ -10,15 +10,15 @@ export default (props) => {
     <div>
       <Route exact path='/' render={(props) => (
         <Welcome {...props} />
-      )}/>
+      )} />
 
       <Route path='/eventList' render={(props) => (
         <EventList {...props} events={events} />
-      )}/>
+      )} />
 
       <Route path='/eventDetail/:eventYear/:eventId' render={(props) => (
         <EventDetail {...props} events={events} />
-      )}/>
+      )} />
     </div>
   )
 }

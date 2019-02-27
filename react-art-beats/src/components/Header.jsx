@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom'
 export default (props) => {
   const { handleNavClick } = props;
   return(
-    <div>
+    <div className='navbar'>
       <Link to="/">Home</Link>
-      <Link to='/eventList'>Events</Link>
       <NavForm handleNavClick={handleNavClick} />
     </div>
   )
