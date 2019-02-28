@@ -2,11 +2,12 @@ import React from 'react';
 import ListItem from './ListItem';
 
 export default (props) => {
-  const { events } = props;
+  const { events, setEvents } = props;
+  setEvents(props.match.params.eventType);
   return(
     <div>
       {events && events.map(event => (
-        <ListItem key={event._attributes.id} event={event} />
+        <ListItem {...props} key={event._attributes.id} event={event} />
       ))}
     </div>
   );

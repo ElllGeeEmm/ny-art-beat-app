@@ -5,19 +5,19 @@ import Welcome from './Welcome'
 import { Route } from 'react-router-dom'
 
 export default (props) => {
-  const { events } = props;
+  const { events, setEvents } = props;
   return(
     <div>
       <Route exact path='/' render={(props) => (
         <Welcome {...props} />
       )} />
 
-      <Route path='/eventList' render={(props) => (
-        <EventList {...props} events={events} />
+      <Route exact path='/eventList/:eventType' render={(props) => (
+        <EventList {...props} events={events} setEvents={setEvents} />
       )} />
 
-      <Route path='/eventDetail/:eventYear/:eventId' render={(props) => (
-        <EventDetail {...props} events={events} />
+      <Route path='/eventList/:eventType/eventDetail/:eventYear/:eventId' render={(props) => (
+        <EventDetail {...props} events={events} setEvents={setEvents} />
       )} />
     </div>
   )
