@@ -30,7 +30,7 @@ class ListItem extends Component {
 
   render(){
     const { event } = this.props;
-    
+
     const styleObj = {
       display: this.toggleHeight()
     };
@@ -40,10 +40,10 @@ class ListItem extends Component {
           <div className='icon-holder' onClick={this.handleClick}>
             <img src={this.toggleIcon()} className='icon' alt='icon'/>
           </div>
-          <Link to={`/eventList/${this.props.match.params.eventType}/eventDetail/${event._attributes.id}`}>
+          <Link className='list-item-header-link' to={`/eventList/${this.props.match.params.eventType}/eventDetail/${event._attributes.id}`}>
             <h2>{event.Name._text}</h2>
             <div className='img-holder'>
-              <img src={event.Image[0]._attributes.src} alt='poster'/>
+              <img src={event.Image[1]._attributes.src} alt='poster'/>
             </div>
           </Link>
         </div>

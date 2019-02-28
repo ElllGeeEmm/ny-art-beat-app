@@ -30,14 +30,6 @@ class App extends Component {
    });
  };
 
-  async componentDidMount(){
-    const resp = await getEvents('event_type_print_painting');
-    const events = resp.Events.Event;
-    this.setState({
-      events
-    });
-  };
-
   async setEvents(eventType){
     const resp = await getEvents(eventType);
     const events = resp.Events.Event;

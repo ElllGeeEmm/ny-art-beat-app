@@ -7,7 +7,7 @@ import { Route } from 'react-router-dom'
 export default (props) => {
   const { events, setEvents } = props;
   return(
-    <div>
+    <div className='main'>
       <Route exact path='/' render={(props) => (
         <Welcome {...props} />
       )} />
