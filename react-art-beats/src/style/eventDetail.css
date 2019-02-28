@@ -1,0 +1,15 @@
+.event-detail-header {
+  display: flex;
+}
+
+.event-detail-header img {
+  margin-right: 2em;
+}
+
+.venue {
+  margin: 2em 0;
+}
+
+hr {
+  margin: 1em 0;
+}

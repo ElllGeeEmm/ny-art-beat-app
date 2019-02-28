@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import { getEvents } from './services/artBeatHelpers';
 import './App.css'
+import './style/navbar.css'
+import './style/listItem.css'
+import './style/eventDetail.css'
 import Header from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
@@ -36,6 +39,7 @@ class App extends Component {
     this.setState({
       events
     });
+    return 0;
   }
 
   render() {

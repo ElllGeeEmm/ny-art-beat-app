@@ -48,9 +48,9 @@ class ListItem extends Component {
           </Link>
         </div>
         <div className='expand-container' style={styleObj}>
-          <div>Showing until: {event.DateEnd._text}</div>
-          <div>Showing at: {event.Venue.Address._text}</div>
-          <div>cost: {event.Price._text}</div>
+        <div><span className='key'>cost: </span><span className='space'/><span className='value'> {event.Price._text}</span></div>
+          <div><span className='key'>Closing Date: </span><span className='space'/><span className='value'> {event.DateEnd._text}</span></div>
+          <div><span className='key'>Venue: </span><span className='space'/><span className='value'> {event.Venue.Address._text}</span></div>
           <Link to={`/eventList/${this.props.match.params.eventType}/eventDetail/${event._attributes.id}`}>Details</Link>
         </div>
       </div>
