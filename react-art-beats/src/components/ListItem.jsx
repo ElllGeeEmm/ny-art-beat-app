@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import plusIcon from '../assets/plusIcon.png'
 import minusIcon from '../assets/minusIcon.png'
+import { styleAddresses } from '../services/artBeatHelpers'
 
 class ListItem extends Component {
   constructor(props){
@@ -31,6 +32,8 @@ class ListItem extends Component {
   render(){
     const { event } = this.props;
 
+    console.log(styleAddresses(event.Venue.Address._text));
+
     const styleObj = {
       display: this.toggleHeight()
     };
@@ -50,7 +53,7 @@ class ListItem extends Component {
         <div className='expand-container' style={styleObj}>
         <div><span className='key'>cost: </span><span className='space'/><span className='value'> {event.Price._text}</span></div>
           <div><span className='key'>Closing Date: </span><span className='space'/><span className='value'> {event.DateEnd._text}</span></div>
-          <div><span className='key'>Venue: </span><span className='space'/><span className='value'> {event.Venue.Address._text}</span></div>
+          <div><span className='key'>Venue: </span><span className='space'/><span className='value'> {styleAddresses(event.Venue.Address._text)}</span></div>
           <Link to={`/eventList/${this.props.match.params.eventType}/eventDetail/${event._attributes.id}`}>Details</Link>
         </div>
       </div>

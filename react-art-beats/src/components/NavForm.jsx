@@ -1,7 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
-import plusIcon from '../assets/plusIcon.png'
-import minusIcon from '../assets/minusIcon.png'
 
 export default (props) => {
   const { handleNavClick } = props;

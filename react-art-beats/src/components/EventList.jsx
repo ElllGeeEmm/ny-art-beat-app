@@ -3,7 +3,7 @@ import ListItem from './ListItem';
 
 export default (props) => {
   const { events, setEvents } = props;
-  setEvents(props.match.params.eventType);
+  setEvents(events, props.match.params.eventType);
   return(
     <div>
       {events && events.map(event => (

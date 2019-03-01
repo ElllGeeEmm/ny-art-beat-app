@@ -3,7 +3,7 @@ import React from 'react'
 export default (props) => {
   const { events, setEvents } = props;
   const id = `${props.match.params.eventYear}/${props.match.params.eventId}`;
-  setEvents(props.match.params.eventType);
+  setEvents(events, props.match.params.eventType);
   const event = props.events.filter(event => event._attributes.id === id)[0];
   return(
     <div>

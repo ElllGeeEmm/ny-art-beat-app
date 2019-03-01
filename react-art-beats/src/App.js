@@ -33,13 +33,14 @@ class App extends Component {
    });
  };
 
-  async setEvents(eventType){
-    const resp = await getEvents(eventType);
-    const events = resp.Events.Event;
-    this.setState({
-      events
-    });
-    return 0;
+  async setEvents(events, eventType){
+    if (events.length === 0){
+      const resp = await getEvents(eventType);
+      const events = resp.Events.Event;
+      this.setState({
+        events
+      });
+    }
   }
 
   render() {
