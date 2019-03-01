@@ -2,6 +2,9 @@
 an app built in react using the NY Art Beat API
 http://www.nyartbeat.com/resources/doc/api
 
+Live preview:
+http://ny-art-beat-react.surge.sh/
+
 ## Objective
 The app is intended to view ongoing and upcoming events listed in the NY Art Beat API. The events should be searchable and sortable by a varitey of criteria such as free or paid, city burough and popularity. The events should be able to be veiwed in detail displaying all the information made available by the API.
 
@@ -23,3 +26,12 @@ https://www.npmjs.com/package/xml-js
 ## post MVP
 - sort returned events
 - add location search, may need to hit another api to integrate this well
+
+## Code snippet
+
+## User stories
+- user goes to home page
+- user browses event list
+- user navigates to an event detail page
+- user can bookmark detail page, page will work even when accessed via url
+
