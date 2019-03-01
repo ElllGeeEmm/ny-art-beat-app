@@ -1,4 +1,5 @@
 import React from 'react'
+import { styleAddresses } from '../services/artBeatHelpers'
 
 export default (props) => {
   const { events, setEvents } = props;
@@ -6,9 +7,8 @@ export default (props) => {
   setEvents(events, props.match.params.eventType);
   const event = props.events.filter(event => event._attributes.id === id)[0];
   return(
-    <div>
+    <div className='event'>
       {event && (
-
         <div>
           <h1>{event.Name._text}</h1>
 
@@ -17,20 +17,23 @@ export default (props) => {
             <div className='price-venue'>
               <div className='price'>
                 <div>{event.Price._attributes.free === '1' && 'Free'}</div>
-                <div>Starts: {event.DateStart._text}</div>
-                <div>Ends: {event.DateEnd._text}</div>
+                {event.DateEnd._text === '0000-00-00' ? (
+                  <div>Permanent Installation</div>
+                ) : (
+                  <div>Ends: {event.DateEnd._text}</div>
+                )}
               </div>
               <div className='venue'>
                 <div>{event.Venue.Type._text}: {event.Venue.Name._text}</div>
                 <div>{event.Venue.Phone._text}</div>
-                <div>{event.Venue.Address._text}</div>
+                <div className='address' dangerouslySetInnerHTML={{__html:styleAddresses(event.Venue.Address._text)}} />
                 <div>opens: {event.Venue.OpeningHour._text}</div>
                 <div>closes: {event.Venue.ClosingHour._text}</div>
               </div>
             </div>
           </div>
           <hr />
-          <div dangerouslySetInnerHTML={{__html: event.Description._cdata}} />
+          <div className='description' dangerouslySetInnerHTML={{__html: event.Description._cdata}} />
         </div>
       )}
     </div>

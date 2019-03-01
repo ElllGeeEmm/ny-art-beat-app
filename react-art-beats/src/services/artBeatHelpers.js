@@ -11,7 +11,7 @@ const getEvents = async (value) => {
 }
 
 const styleAddresses = (address) => {
-  return address.split(',').join(',\n');
+  return address.split(',').join(',<br/>');
 }
 
 export { getEvents, styleAddresses }

@@ -9,7 +9,7 @@ export default (props) => {
   return(
     <div className='main'>
       <Route exact path='/' render={(props) => (
-        <Welcome {...props} />
+        <Welcome {...props} events={events} setEvents={setEvents}/>
       )} />
 
       <Route exact path='/eventList/:eventType' render={(props) => (

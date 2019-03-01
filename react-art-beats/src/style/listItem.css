@@ -79,5 +79,9 @@
 .expand-container a {
   text-decoration: none;
   margin: 0 auto;
-  transition: color 80ms ease-in;
+  transition: color 20ms ease-in;
+}
+
+.expand-container div {
+  display: flex;
 }
